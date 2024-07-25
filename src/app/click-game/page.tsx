@@ -9,19 +9,37 @@ import { useEffect, useState } from "react";
 
 const ClickGame = () => {
   const wallet = useTonWallet();
-  const [balance, setBalance] = useState(0);
-  const [clicks, setClicks] = useState(1000);
+  const [balance, setBalance] = useState(() => {
+    const savedBalance = localStorage.getItem("balance");
+    return savedBalance ? parseInt(savedBalance, 10) : 0;
+  });
+  const [clicks, setClicks] = useState(() => {
+    const savedClicks = localStorage.getItem("clicks");
+    return savedClicks ? parseInt(savedClicks, 10) : 1000;
+  });
 
   const onCoinClick = () => {
-    setBalance((prev) => prev + 1);
-    setClicks((prev) => prev - 1);
+    setBalance((prev) => {
+      const newBalance = prev + 1;
+      localStorage.setItem("balance", newBalance.toString());
+      return newBalance;
+    });
+    setClicks((prev) => {
+      const newClicks = prev - 1;
+      localStorage.setItem("clicks", newClicks.toString());
+      return newClicks;
+    });
   };
 
   // useEffect if clicks<1000, increase clicks by 1 every second
   useEffect(() => {
     const interval = setInterval(() => {
       if (clicks < 1000) {
-        setClicks((prev) => prev + 1);
+        setClicks((prev) => {
+          const newClicks = prev + 1;
+          localStorage.setItem("clicks", newClicks.toString());
+          return newClicks;
+        });
       }
     }, 500);
     return () => clearInterval(interval);
