@@ -59,7 +59,7 @@ const ClickGame = () => {
         />
       )}
       {wallet && (
-        <div className="text-3xl flex flex-col items-center">
+        <div className="flex flex-col items-center p-1">
           <div>Connected Wallet: {wallet.account.address}</div>
           <div>Connected Chain: {wallet.account.chain}</div>
         </div>
