@@ -15,7 +15,8 @@ function RootInner({ children }: PropsWithChildren) {
   const webApp = getWebApp();
   const debug = webApp.initDataUnsafe.start_param === 'debug';
   const manifestUrl = useMemo(() => {
-    return new URL('tonconnect-manifest.json', window.location.href).toString();
+    // return new URL('tonconnect-manifest.json', window.location.href).toString();
+    return "https://www.jsonkeeper.com/b/VTBX";
   }, []);
 
   // Enable debug mode to see all the methods sent and events received.
