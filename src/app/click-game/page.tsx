@@ -46,7 +46,7 @@ const ClickGame = () => {
   }, [clicks]);
 
   return (
-    <div>
+    <div className="bg-[url('https://sexyphoto.es/wp-content/uploads/2019/11/perfect-girl-scaled.jpg')] bg-cover bg-center min-h-screen">
       {!wallet && (
         <Placeholder
           className="ton-connect-page__placeholder"
@@ -65,16 +65,16 @@ const ClickGame = () => {
         </div>
       )}
       <div className="flex flex-col items-center p-20">
-        <Image
+        {/* <Image
           onClick={onCoinClick}
           src={CoinImage}
           alt="Coin"
           width={200}
           height={200}
           className=""
-        />
+        /> */}
       </div>
-      <div className="text-3xl flex flex-col items-center">
+      <div className="text-3xl flex flex-col items-center ">
         <div>Clicks: {clicks}</div>
         <div>Stream Balance: {balance}</div>
         <Text>Click the coin to increase your coin balance!</Text>

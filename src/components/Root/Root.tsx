@@ -16,7 +16,8 @@ function RootInner({ children }: PropsWithChildren) {
   const debug = webApp.initDataUnsafe.start_param === 'debug';
   const manifestUrl = useMemo(() => {
     // return new URL('tonconnect-manifest.json', window.location.href).toString();
-    return "https://www.jsonkeeper.com/b/VTBX";
+    // return "https://www.jsonkeeper.com/b/VTBX";
+    return "https://jsonkeeper.com/b/D7LD";
   }, []);
 
   // Enable debug mode to see all the methods sent and events received.
@@ -27,10 +28,10 @@ function RootInner({ children }: PropsWithChildren) {
   }, [debug]);
 
   return (
-    <TonConnectUIProvider manifestUrl={manifestUrl}>
+    <TonConnectUIProvider manifestUrl="https://jsonkeeper.com/b/D7LD">
       <AppRoot
         appearance={webApp.colorScheme}
-        platform={['macos', 'ios'].includes(webApp.platform) ? 'ios' : 'base'}
+        platform={["macos", "ios"].includes(webApp.platform) ? "ios" : "base"}
       >
         {children}
       </AppRoot>
