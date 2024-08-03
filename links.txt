@@ -1,0 +1,3 @@
+telegram ui: https://tgui.xelene.me/?path=/docs/feedback-progress--documentation
+vercel deployment: https://vercel.com/coderwithsenses-projects/telegram-mini-app-click-game
+github repo: https://github.com/coderwithsense/telegram-mini-app-click-game
