@@ -4,6 +4,8 @@ import { Placeholder, Text } from "@telegram-apps/telegram-ui";
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 
 import CoinImage from "../_assets/image.png";
+import GuyImage from "../_assets/guy.jpg";
+import GirlImage from "../_assets/girl.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -46,7 +48,7 @@ const ClickGame = () => {
   }, [clicks]);
 
   return (
-    <div className="bg-[url('https://sexyphoto.es/wp-content/uploads/2019/11/perfect-girl-scaled.jpg')] bg-cover bg-center min-h-screen">
+    <div className="bg-[url('https://wallpapers-clan.com/wp-content/uploads/2023/01/clouds-aesthetic-red-background.jpg')] bg-cover bg-center min-h-screen flex flex-col justify-between">
       {!wallet && (
         <Placeholder
           className="ton-connect-page__placeholder"
@@ -64,17 +66,25 @@ const ClickGame = () => {
           <div>Connected Chain: {wallet.account.chain}</div>
         </div>
       )}
-      <div className="flex flex-col items-center p-20">
-        {/* <Image
+      <div className="flex justify-evenly">
+        <Image
           onClick={onCoinClick}
-          src={CoinImage}
+          src={GuyImage}
           alt="Coin"
           width={200}
           height={200}
           className=""
-        /> */}
+        />
+        <Image
+          onClick={onCoinClick}
+          src={GirlImage}
+          alt="Coin"
+          width={200}
+          height={200}
+          className=""
+        />
       </div>
-      <div className="text-3xl flex flex-col items-center ">
+      <div className="text-3xl flex flex-col items-center">
         <div>Clicks: {clicks}</div>
         <div>Stream Balance: {balance}</div>
         <Text>Click the coin to increase your coin balance!</Text>
